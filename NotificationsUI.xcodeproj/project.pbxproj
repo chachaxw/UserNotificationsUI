@@ -12,7 +12,7 @@
 		AF68C18B1D875D1300F42FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF68C1891D875D1300F42FC1 /* Main.storyboard */; };
 		AF68C18D1D875D1300F42FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF68C18C1D875D1300F42FC1 /* Assets.xcassets */; };
 		AF68C1901D875D1300F42FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF68C18E1D875D1300F42FC1 /* LaunchScreen.storyboard */; };
-		AF68C1981D8779FE00F42FC1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF68C1971D8779FE00F42FC1 /* logo.png */; };
+		B6D99EAF1E228639007497DA /* chacha.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D99EAE1E228639007497DA /* chacha.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +38,7 @@
 		AF68C18C1D875D1300F42FC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF68C18F1D875D1300F42FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF68C1911D875D1300F42FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF68C1971D8779FE00F42FC1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		B6D99EAE1E228639007497DA /* chacha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chacha.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 		AF68C1841D875D1300F42FC1 /* NotificationsUI */ = {
 			isa = PBXGroup;
 			children = (
-				AF68C1971D8779FE00F42FC1 /* logo.png */,
+				B6D99EAE1E228639007497DA /* chacha.png */,
 				AF68C18C1D875D1300F42FC1 /* Assets.xcassets */,
 				AF68C18E1D875D1300F42FC1 /* LaunchScreen.storyboard */,
 				AF68C1911D875D1300F42FC1 /* Info.plist */,
@@ -154,8 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF68C1901D875D1300F42FC1 /* LaunchScreen.storyboard in Resources */,
+				B6D99EAF1E228639007497DA /* chacha.png in Resources */,
 				AF68C18D1D875D1300F42FC1 /* Assets.xcassets in Resources */,
-				AF68C1981D8779FE00F42FC1 /* logo.png in Resources */,
 				AF68C18B1D875D1300F42FC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

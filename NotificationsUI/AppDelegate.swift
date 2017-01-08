@@ -13,6 +13,10 @@ import UserNotifications
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
+        let action = UNNotificationAction(identifier: "remindLater", title: "Remind me later", options: [])
+        let category = UNNotificationCategory(identifier: "myCategory", actions: [action], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
             if !accepted {
                 print("Notification access denied.")
@@ -29,9 +33,22 @@ import UserNotifications
         let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
         let content = UNMutableNotificationContent()
         content.title = "Tutorial Reminder"
-        content.body = "Just a reminder to read your tutorial over at appcoda.com!"
+        content.body = "This is a User Notification by chacha"
         content.sound = UNNotificationSound.default()
+        content.categoryIdentifier = "myCategory"
         
+        if let path = Bundle.main.path(forResource: "chacha", ofType: "png") {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                let attachment = try UNNotificationAttachment(identifier: "chacha", url: url, options: nil)
+                content.attachments = [attachment]
+            } catch {
+                print("The attachment was not loaded.")
+            }
+        }
+        
+//        print("User Notification is \(content)")
         // identifier: This is a unique identifier for our request. As you’ll see shortly, this identifier can be used to cancel notification requests.
         // content: This is the notification content we created earlier.
         // trigger: This is the trigger we would like to use to trigger our notification. When the conditions of the trigger are met, iOS will display the notification.
@@ -46,4 +63,13 @@ import UserNotifications
         
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.actionIdentifier == "remindLater" {
+            let newDate = Date(timeInterval: 900, since: Date())
+            scheduleNotification(at: newDate)
+        }
+    }
 }
