@@ -68,7 +68,7 @@ import UserNotifications
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.actionIdentifier == "remindLater" {
-            let newDate = Date(timeInterval: 900, since: Date())
+            let newDate = Date(timeInterval: 120, since: Date())
             scheduleNotification(at: newDate)
         }
     }
